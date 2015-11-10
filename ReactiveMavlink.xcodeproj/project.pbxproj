@@ -7,16 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27EF10D91BF1FD21004256EF /* ReactiveMavlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 27EF10D81BF1FD21004256EF /* ReactiveMavlink.h */; };
+		278446D01BF2146E0045AF6A /* ReactiveMavlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 278446CE1BF214610045AF6A /* ReactiveMavlink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		278446D11BF2147A0045AF6A /* ReactiveMavlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 278446CE1BF214610045AF6A /* ReactiveMavlink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		278446CE1BF214610045AF6A /* ReactiveMavlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReactiveMavlink.h; path = Resources/ReactiveMavlink.h; sourceTree = "<group>"; };
+		2797DE0B1BF210150081F5D2 /* ReactiveMavlink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMavlink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EA30CA1BF1DF2B006E21B9 /* ReactiveMavlink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMavlink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		27EF10D81BF1FD21004256EF /* ReactiveMavlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReactiveMavlink.h; path = Sources/ReactiveMavlink.h; sourceTree = SOURCE_ROOT; };
 		27EF10DA1BF1FD2D004256EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2797DE071BF210150081F5D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27EA30C61BF1DF2B006E21B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				27EA30CA1BF1DF2B006E21B9 /* ReactiveMavlink.framework */,
+				2797DE0B1BF210150081F5D2 /* ReactiveMavlink.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -47,7 +57,6 @@
 		27EA30CC1BF1DF2B006E21B9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				27EF10D81BF1FD21004256EF /* ReactiveMavlink.h */,
 			);
 			name = Sources;
 			path = ReactiveMavlink;
@@ -56,6 +65,7 @@
 		27EF10D71BF1FD0F004256EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				278446CE1BF214610045AF6A /* ReactiveMavlink.h */,
 				27EF10DA1BF1FD2D004256EF /* Info.plist */,
 			);
 			name = Resources;
@@ -64,20 +74,46 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2797DE081BF210150081F5D2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				278446D01BF2146E0045AF6A /* ReactiveMavlink.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27EA30C71BF1DF2B006E21B9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27EF10D91BF1FD21004256EF /* ReactiveMavlink.h in Headers */,
+				278446D11BF2147A0045AF6A /* ReactiveMavlink.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink */ = {
+		2797DE0A1BF210150081F5D2 /* ReactiveMavlink OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink" */;
+			buildConfigurationList = 2797DE101BF210150081F5D2 /* Build configuration list for PBXNativeTarget "ReactiveMavlink OSX" */;
+			buildPhases = (
+				2797DE061BF210150081F5D2 /* Sources */,
+				2797DE071BF210150081F5D2 /* Frameworks */,
+				2797DE081BF210150081F5D2 /* Headers */,
+				2797DE091BF210150081F5D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReactiveMavlink OSX";
+			productName = "ReactiveMavlink OSX";
+			productReference = 2797DE0B1BF210150081F5D2 /* ReactiveMavlink.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink iOS" */;
 			buildPhases = (
 				27EA30C51BF1DF2B006E21B9 /* Sources */,
 				27EA30C61BF1DF2B006E21B9 /* Frameworks */,
@@ -88,7 +124,7 @@
 			);
 			dependencies = (
 			);
-			name = ReactiveMavlink;
+			name = "ReactiveMavlink iOS";
 			productName = ReactiveMavlink;
 			productReference = 27EA30CA1BF1DF2B006E21B9 /* ReactiveMavlink.framework */;
 			productType = "com.apple.product-type.framework";
@@ -102,6 +138,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Michael Koukoullis";
 				TargetAttributes = {
+					2797DE0A1BF210150081F5D2 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					27EA30C91BF1DF2B006E21B9 = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -119,12 +158,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink */,
+				27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink iOS */,
+				2797DE0A1BF210150081F5D2 /* ReactiveMavlink OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2797DE091BF210150081F5D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27EA30C81BF1DF2B006E21B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +182,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2797DE061BF210150081F5D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		27EA30C51BF1DF2B006E21B9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -145,6 +199,48 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		2797DE111BF210150081F5D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kouky.ReactiveMavlink-OSX";
+				PRODUCT_NAME = ReactiveMavlink;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2797DE121BF210150081F5D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.kouky.ReactiveMavlink-OSX";
+				PRODUCT_NAME = ReactiveMavlink;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		27EA30D01BF1DF2B006E21B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -245,7 +341,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kouky.ReactiveMavlink;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveMavlink;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -261,7 +357,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kouky.ReactiveMavlink;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveMavlink;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -269,6 +365,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2797DE101BF210150081F5D2 /* Build configuration list for PBXNativeTarget "ReactiveMavlink OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2797DE111BF210150081F5D2 /* Debug */,
+				2797DE121BF210150081F5D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		27EA30C41BF1DF2B006E21B9 /* Build configuration list for PBXProject "ReactiveMavlink" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -278,7 +383,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink" */ = {
+		27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27EA30D31BF1DF2B006E21B9 /* Debug */,
