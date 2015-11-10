@@ -25,3 +25,5 @@ VALIDATE_PRODUCT = NO
 
 // Disable Developer ID timestamping
 OTHER_CODE_SIGN_FLAGS = --timestamp=none
+
+PRODUCT_NAME = $(PROJECT_NAME)

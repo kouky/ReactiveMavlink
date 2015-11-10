@@ -239,7 +239,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kouky.ReactiveMavlink-OSX";
-				PRODUCT_NAME = ReactiveMavlink;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -261,7 +260,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kouky.ReactiveMavlink-OSX";
-				PRODUCT_NAME = ReactiveMavlink;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -370,7 +368,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kouky.ReactiveMavlink;
-				PRODUCT_NAME = ReactiveMavlink;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -387,7 +384,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kouky.ReactiveMavlink;
-				PRODUCT_NAME = ReactiveMavlink;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
