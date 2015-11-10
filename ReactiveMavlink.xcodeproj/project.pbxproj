@@ -9,10 +9,18 @@
 /* Begin PBXBuildFile section */
 		278446D01BF2146E0045AF6A /* ReactiveMavlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 278446CE1BF214610045AF6A /* ReactiveMavlink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		278446D11BF2147A0045AF6A /* ReactiveMavlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 278446CE1BF214610045AF6A /* ReactiveMavlink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		278446D51BF217E00045AF6A /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D31BF217E00045AF6A /* Debug.xcconfig */; };
+		278446D61BF217E00045AF6A /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D41BF217E00045AF6A /* Release.xcconfig */; };
+		278446D81BF218080045AF6A /* iOS-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D71BF218080045AF6A /* iOS-Framework.xcconfig */; };
+		278446DA1BF218170045AF6A /* Mac-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D91BF218170045AF6A /* Mac-Framework.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		278446CE1BF214610045AF6A /* ReactiveMavlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReactiveMavlink.h; path = Resources/ReactiveMavlink.h; sourceTree = "<group>"; };
+		278446D31BF217E00045AF6A /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Config/Base/Configurations/Debug.xcconfig; sourceTree = "<group>"; };
+		278446D41BF217E00045AF6A /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Base/Configurations/Release.xcconfig; sourceTree = "<group>"; };
+		278446D71BF218080045AF6A /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "iOS-Framework.xcconfig"; path = "Config/iOS/iOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		278446D91BF218170045AF6A /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Mac-Framework.xcconfig"; path = "Config/Mac OS X/Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		2797DE0B1BF210150081F5D2 /* ReactiveMavlink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMavlink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EA30CA1BF1DF2B006E21B9 /* ReactiveMavlink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMavlink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EF10DA1BF1FD2D004256EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
@@ -36,11 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		278446D21BF217C70045AF6A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				278446D91BF218170045AF6A /* Mac-Framework.xcconfig */,
+				278446D71BF218080045AF6A /* iOS-Framework.xcconfig */,
+				278446D31BF217E00045AF6A /* Debug.xcconfig */,
+				278446D41BF217E00045AF6A /* Release.xcconfig */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		27EA30C01BF1DF2B006E21B9 = {
 			isa = PBXGroup;
 			children = (
 				27EA30CC1BF1DF2B006E21B9 /* Sources */,
 				27EF10D71BF1FD0F004256EF /* Resources */,
+				278446D21BF217C70045AF6A /* Config */,
 				27EA30CB1BF1DF2B006E21B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -176,6 +196,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278446D81BF218080045AF6A /* iOS-Framework.xcconfig in Resources */,
+				278446DA1BF218170045AF6A /* Mac-Framework.xcconfig in Resources */,
+				278446D61BF217E00045AF6A /* Release.xcconfig in Resources */,
+				278446D51BF217E00045AF6A /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +225,7 @@
 /* Begin XCBuildConfiguration section */
 		2797DE111BF210150081F5D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278446D91BF218170045AF6A /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -222,6 +247,7 @@
 		};
 		2797DE121BF210150081F5D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278446D91BF218170045AF6A /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -243,6 +269,7 @@
 		};
 		27EA30D01BF1DF2B006E21B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278446D31BF217E00045AF6A /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -291,6 +318,7 @@
 		};
 		27EA30D11BF1DF2B006E21B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278446D41BF217E00045AF6A /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -332,6 +360,7 @@
 		};
 		27EA30D31BF1DF2B006E21B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278446D71BF218080045AF6A /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -348,6 +377,7 @@
 		};
 		27EA30D41BF1DF2B006E21B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 278446D71BF218080045AF6A /* iOS-Framework.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
