@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27165DD11BF35EAE009149CD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27165DD01BF35EAE009149CD /* ReactiveCocoa.framework */; };
+		27165DD31BF35F0C009149CD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27165DD21BF35F0C009149CD /* ReactiveCocoa.framework */; };
+		27165DD61BF35FD9009149CD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27165DD51BF35FD9009149CD /* Result.framework */; };
+		27165DD81BF35FE7009149CD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27165DD71BF35FE7009149CD /* Result.framework */; };
 		278446D01BF2146E0045AF6A /* ReactiveMavlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 278446CE1BF214610045AF6A /* ReactiveMavlink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		278446D11BF2147A0045AF6A /* ReactiveMavlink.h in Headers */ = {isa = PBXBuildFile; fileRef = 278446CE1BF214610045AF6A /* ReactiveMavlink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		278446D51BF217E00045AF6A /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D31BF217E00045AF6A /* Debug.xcconfig */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27165DD01BF35EAE009149CD /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		27165DD21BF35F0C009149CD /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		27165DD51BF35FD9009149CD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		27165DD71BF35FE7009149CD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		278446CE1BF214610045AF6A /* ReactiveMavlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReactiveMavlink.h; path = Resources/ReactiveMavlink.h; sourceTree = "<group>"; };
 		278446D31BF217E00045AF6A /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Config/Base/Configurations/Debug.xcconfig; sourceTree = "<group>"; };
 		278446D41BF217E00045AF6A /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Base/Configurations/Release.xcconfig; sourceTree = "<group>"; };
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27165DD11BF35EAE009149CD /* ReactiveCocoa.framework in Frameworks */,
+				27165DD81BF35FE7009149CD /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,12 +48,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27165DD31BF35F0C009149CD /* ReactiveCocoa.framework in Frameworks */,
+				27165DD61BF35FD9009149CD /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27165DD91BF36378009149CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27165DD71BF35FE7009149CD /* Result.framework */,
+				27165DD51BF35FD9009149CD /* Result.framework */,
+				27165DD21BF35F0C009149CD /* ReactiveCocoa.framework */,
+				27165DD01BF35EAE009149CD /* ReactiveCocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		278446D21BF217C70045AF6A /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +85,7 @@
 				27EF10D71BF1FD0F004256EF /* Resources */,
 				278446D21BF217C70045AF6A /* Config */,
 				27EA30CB1BF1DF2B006E21B9 /* Products */,
+				27165DD91BF36378009149CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +163,7 @@
 				27EA30C61BF1DF2B006E21B9 /* Frameworks */,
 				27EA30C71BF1DF2B006E21B9 /* Headers */,
 				27EA30C81BF1DF2B006E21B9 /* Resources */,
+				27165DD41BF35F5A009149CD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -205,6 +230,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27165DD41BF35F5A009149CD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2797DE061BF210150081F5D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -233,6 +276,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -254,6 +301,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -364,6 +415,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -380,6 +435,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
