@@ -17,6 +17,8 @@
 		278446D61BF217E00045AF6A /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D41BF217E00045AF6A /* Release.xcconfig */; };
 		278446D81BF218080045AF6A /* iOS-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D71BF218080045AF6A /* iOS-Framework.xcconfig */; };
 		278446DA1BF218170045AF6A /* Mac-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 278446D91BF218170045AF6A /* Mac-Framework.xcconfig */; };
+		278642251BF4DA41004F38AA /* ReactiveMavlink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278642241BF4DA41004F38AA /* ReactiveMavlink.swift */; };
+		278642261BF4DA41004F38AA /* ReactiveMavlink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278642241BF4DA41004F38AA /* ReactiveMavlink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,7 @@
 		278446D41BF217E00045AF6A /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Config/Base/Configurations/Release.xcconfig; sourceTree = "<group>"; };
 		278446D71BF218080045AF6A /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "iOS-Framework.xcconfig"; path = "Config/iOS/iOS-Framework.xcconfig"; sourceTree = "<group>"; };
 		278446D91BF218170045AF6A /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Mac-Framework.xcconfig"; path = "Config/Mac OS X/Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		278642241BF4DA41004F38AA /* ReactiveMavlink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReactiveMavlink.swift; path = Sources/ReactiveMavlink.swift; sourceTree = SOURCE_ROOT; };
 		2797DE0B1BF210150081F5D2 /* ReactiveMavlink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMavlink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EA30CA1BF1DF2B006E21B9 /* ReactiveMavlink.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveMavlink.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27EF10DA1BF1FD2D004256EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		27EA30CC1BF1DF2B006E21B9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				278642241BF4DA41004F38AA /* ReactiveMavlink.swift */,
 			);
 			name = Sources;
 			path = ReactiveMavlink;
@@ -253,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278642261BF4DA41004F38AA /* ReactiveMavlink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278642251BF4DA41004F38AA /* ReactiveMavlink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +276,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 278446D91BF218170045AF6A /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -288,6 +295,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kouky.ReactiveMavlink-OSX";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -295,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 278446D91BF218170045AF6A /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -411,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 278446D71BF218080045AF6A /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -424,6 +434,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.kouky.ReactiveMavlink;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -431,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 278446D71BF218080045AF6A /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
