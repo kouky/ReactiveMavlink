@@ -141,9 +141,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2797DE0A1BF210150081F5D2 /* ReactiveMavlink OSX */ = {
+		2797DE0A1BF210150081F5D2 /* ReactiveMavlink-Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2797DE101BF210150081F5D2 /* Build configuration list for PBXNativeTarget "ReactiveMavlink OSX" */;
+			buildConfigurationList = 2797DE101BF210150081F5D2 /* Build configuration list for PBXNativeTarget "ReactiveMavlink-Mac" */;
 			buildPhases = (
 				2797DE061BF210150081F5D2 /* Sources */,
 				2797DE071BF210150081F5D2 /* Frameworks */,
@@ -154,14 +154,14 @@
 			);
 			dependencies = (
 			);
-			name = "ReactiveMavlink OSX";
+			name = "ReactiveMavlink-Mac";
 			productName = "ReactiveMavlink OSX";
 			productReference = 2797DE0B1BF210150081F5D2 /* ReactiveMavlink.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink iOS */ = {
+		27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink iOS" */;
+			buildConfigurationList = 27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink-iOS" */;
 			buildPhases = (
 				27EA30C51BF1DF2B006E21B9 /* Sources */,
 				27EA30C61BF1DF2B006E21B9 /* Frameworks */,
@@ -173,7 +173,7 @@
 			);
 			dependencies = (
 			);
-			name = "ReactiveMavlink iOS";
+			name = "ReactiveMavlink-iOS";
 			productName = ReactiveMavlink;
 			productReference = 27EA30CA1BF1DF2B006E21B9 /* ReactiveMavlink.framework */;
 			productType = "com.apple.product-type.framework";
@@ -207,8 +207,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink iOS */,
-				2797DE0A1BF210150081F5D2 /* ReactiveMavlink OSX */,
+				27EA30C91BF1DF2B006E21B9 /* ReactiveMavlink-iOS */,
+				2797DE0A1BF210150081F5D2 /* ReactiveMavlink-Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -462,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2797DE101BF210150081F5D2 /* Build configuration list for PBXNativeTarget "ReactiveMavlink OSX" */ = {
+		2797DE101BF210150081F5D2 /* Build configuration list for PBXNativeTarget "ReactiveMavlink-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2797DE111BF210150081F5D2 /* Debug */,
@@ -480,7 +480,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink iOS" */ = {
+		27EA30D21BF1DF2B006E21B9 /* Build configuration list for PBXNativeTarget "ReactiveMavlink-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27EA30D31BF1DF2B006E21B9 /* Debug */,
