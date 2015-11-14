@@ -9,8 +9,8 @@
 import Mavlink
 
 public struct Heartbeat: ReactiveMavlinkType {
-    let autopilot: Autopilot
-    let mavlinkMessageId: UInt8
+    public let autopilot: Autopilot
+    public let mavlinkMessageId: UInt8
 }
 
 struct HeartbeatCodec : MessageCodec {

@@ -12,13 +12,13 @@ import ReactiveCocoa
 public class ReactiveMavlink {
     
     // MARK: Public signals
-    let heartbeat: Signal<Heartbeat, NSError>
-    let message: Signal<ReactiveMavlinkType, NSError>
+    public let heartbeat: Signal<Heartbeat, NSError>
+    public let message: Signal<ReactiveMavlinkType, NSError>
     
-    private let mavlinkMessage: Signal<mavlink_message_t, NSError>
-    private let mavlinkMessageObserver: Observer<mavlink_message_t, NSError>
+    let mavlinkMessage: Signal<mavlink_message_t, NSError>
+    let mavlinkMessageObserver: Observer<mavlink_message_t, NSError>
 
-    init() {
+    public init() {
         (mavlinkMessage, mavlinkMessageObserver) = Signal<mavlink_message_t, NSError>.pipe()
 
         message = mavlinkMessage.map { m in
@@ -28,10 +28,10 @@ public class ReactiveMavlink {
             }
         }
         
-        heartbeat = message.filter { !($0 is Heartbeat) }.map { $0 as! Heartbeat }
+        heartbeat = message.filter { $0 is Heartbeat }.map { $0 as! Heartbeat }
     }
     
-    func receiveData(data: NSData) {
+    public func receiveData(data: NSData) {
         var bytes = [UInt8](count: data.length, repeatedValue: 0)
         data.getBytes(&bytes, length: data.length)
         
@@ -50,6 +50,6 @@ protocol MessageCodec {
     static func decode(var message: mavlink_message_t) -> ReactiveMavlinkType
 }
 
-protocol ReactiveMavlinkType {
+public protocol ReactiveMavlinkType {
     var mavlinkMessageId: UInt8 { get }
 }

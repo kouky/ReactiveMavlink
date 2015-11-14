@@ -9,7 +9,7 @@
 import Mavlink
 
 public struct Unidentified: ReactiveMavlinkType {
-    let mavlinkMessageId: UInt8
+    public let mavlinkMessageId: UInt8
 }
 
 struct UnidentifiedCodec : MessageCodec {
