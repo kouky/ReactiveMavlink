@@ -10,7 +10,7 @@ import Mavlink
 
 public struct Heartbeat: ReactiveMavlinkType {
     let autopilot: Autopilot
-    let mavlinkMessage: mavlink_message_t
+    let mavlinkMessageId: UInt8
 }
 
 struct HeartbeatCodec : MessageCodec {
@@ -21,7 +21,7 @@ struct HeartbeatCodec : MessageCodec {
         mavlink_msg_heartbeat_decode(&msg, &heartbeat);
         return Heartbeat(
             autopilot: Autopilot(rawValue: heartbeat.autopilot) ?? Autopilot.Unknown,
-            mavlinkMessage: message
+            mavlinkMessageId: message.msgid
         )
     }
 }
