@@ -9,12 +9,12 @@
 import Mavlink
 
 public struct Unidentified: ReactiveMavlinkType {
-    let mavlinkMessage: mavlink_message_t
+    public let mavlinkMessageId: UInt8
 }
 
 struct UnidentifiedCodec : MessageCodec {
     
     static func decode(message: mavlink_message_t) -> ReactiveMavlinkType {
-        return Unidentified(mavlinkMessage: message)
+        return Unidentified(mavlinkMessageId: message.msgid)
     }
 }
