@@ -7,3 +7,6 @@
 [submodule "Vendor/Mavlink"]
 	path = Vendor/Mavlink
 	url = https://github.com/mavlink/c_library.git
+[submodule "Vendor/xcconfigs"]
+	path = Vendor/xcconfigs
+	url = https://github.com/jspahrsummers/xcconfigs.git
