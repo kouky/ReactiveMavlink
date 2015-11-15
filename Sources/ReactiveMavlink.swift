@@ -13,7 +13,8 @@ public class ReactiveMavlink {
     
     // MARK: Public signals
     public let heartbeat: Signal<Heartbeat, NSError>
-    public let message: Signal<Message, NSError>
+    public let attitude:  Signal<Attitude, NSError>
+    public let message:   Signal<Message, NSError>
     
     let mavlinkMessage: Signal<mavlink_message_t, NSError>
     let mavlinkMessageObserver: Observer<mavlink_message_t, NSError>
@@ -30,6 +31,7 @@ public class ReactiveMavlink {
         }
         
         heartbeat = message.filter { $0 is Heartbeat }.map { $0 as! Heartbeat }
+        attitude = message.filter { $0 is Attitude }.map { $0 as! Attitude }
     }
     
     public func receiveData(data: NSData) {
