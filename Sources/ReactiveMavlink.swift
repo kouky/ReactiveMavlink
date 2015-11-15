@@ -31,9 +31,9 @@ public class ReactiveMavlink {
             }
         }
         
-        heartbeat = message.filter { $0 is Heartbeat }.map { $0 as! Heartbeat }
-        attitude  = message.filter { $0 is Attitude }.map  { $0 as! Attitude }
-        unidentified = message.filter { $0 is Unidentified }.map  { $0 as! Unidentified }
+        heartbeat = extract(message)
+        attitude = extract(message)
+        unidentified = extract(message)
     }
     
     public func receiveData(data: NSData) {
@@ -63,4 +63,8 @@ class ReactiveMavlinkAdapter {
             }
         }
     }
+}
+
+func extract<T>(s: Signal<MessageType, NSError>) -> Signal<T, NSError> {
+    return s.filter { $0 is T }.map { $0 as! T }
 }
