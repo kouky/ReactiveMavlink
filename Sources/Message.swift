@@ -9,7 +9,8 @@
 import Mavlink
 
 public protocol Message {
-    var mavlinkMessageId: UInt8 { get }
+    // Mavlink message id
+    var id: UInt8 { get }
 }
 
 protocol MessageCodec {

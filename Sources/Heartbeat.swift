@@ -9,8 +9,8 @@
 import Mavlink
 
 public struct Heartbeat: Message {
+    public let id: UInt8
     public let autopilot: Autopilot
-    public let mavlinkMessageId: UInt8
 }
 
 struct HeartbeatCodec : MessageCodec {
@@ -20,8 +20,8 @@ struct HeartbeatCodec : MessageCodec {
         var heartbeat = mavlink_heartbeat_t()
         mavlink_msg_heartbeat_decode(&msg, &heartbeat);
         return Heartbeat(
-            autopilot: Autopilot(rawValue: heartbeat.autopilot) ?? Autopilot.Unknown,
-            mavlinkMessageId: message.msgid
+            id: message.msgid,
+            autopilot: Autopilot(rawValue: heartbeat.autopilot) ?? Autopilot.Unknown
         )
     }
 }
