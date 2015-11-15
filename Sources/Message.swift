@@ -16,7 +16,3 @@ public protocol MessageType {
 protocol MessageCodec {
     static func decode(var message: mavlink_message_t) -> MessageType
 }
-
-enum Message {
-    case Heartbeat(mavlink_message_t, )
-}
