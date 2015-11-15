@@ -8,7 +8,7 @@
 
 import Mavlink
 
-public struct Attitude: Message {
+public struct Attitude: MessageType {
     public let id: UInt8
     public let roll: Float
     public let pitch: Float
@@ -20,7 +20,7 @@ public struct Attitude: Message {
 
 struct AttitudeCodec : MessageCodec {
     
-    static func decode(message: mavlink_message_t) -> Message {
+    static func decode(message: mavlink_message_t) -> MessageType {
         var msg = message
         var attitude = mavlink_attitude_t()
         mavlink_msg_attitude_decode(&msg, &attitude);

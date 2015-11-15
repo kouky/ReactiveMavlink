@@ -13,24 +13,27 @@ public class ReactiveMavlink {
     
     // MARK: Public properties
     public let heartbeat: Signal<Heartbeat, NSError>
-    public let attitude:  Signal<Attitude, NSError>
-    public let message:   Signal<Message, NSError>
+    public let attitude: Signal<Attitude, NSError>
+    public let unidentified: Signal<Unidentified, NSError>
+    
     
     // MARK: Private properties
     let adapter = ReactiveMavlinkAdapter()
+    let message: Signal<MessageType, NSError>
 
     // MARK: Public methods
     public init() {
-        message = adapter.mavlink.map { m in
-            switch m.msgid {
-            case 0: return HeartbeatCodec.decode(m)
-            case 30: return AttitudeCodec.decode(m)
-            default: return UnidentifiedCodec.decode(m)
+        message = adapter.mavlink.map { msg in
+            switch msg.msgid {
+            case 0: return HeartbeatCodec.decode(msg)
+            case 30: return AttitudeCodec.decode(msg)
+            default: return UnidentifiedCodec.decode(msg)
             }
         }
         
         heartbeat = message.filter { $0 is Heartbeat }.map { $0 as! Heartbeat }
-        attitude = message.filter { $0 is Attitude }.map { $0 as! Attitude }
+        attitude  = message.filter { $0 is Attitude }.map  { $0 as! Attitude }
+        unidentified = message.filter { $0 is Unidentified }.map  { $0 as! Unidentified }
     }
     
     public func receiveData(data: NSData) {
