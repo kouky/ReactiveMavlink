@@ -13,7 +13,7 @@ public class ReactiveMavlink {
     
     // MARK: Public signals
     public let heartbeat: Signal<Heartbeat, NSError>
-    public let message: Signal<ReactiveMavlinkType, NSError>
+    public let message: Signal<Message, NSError>
     
     let mavlinkMessage: Signal<mavlink_message_t, NSError>
     let mavlinkMessageObserver: Observer<mavlink_message_t, NSError>
@@ -44,12 +44,4 @@ public class ReactiveMavlink {
             }
         }
     }
-}
-
-protocol MessageCodec {
-    static func decode(var message: mavlink_message_t) -> ReactiveMavlinkType
-}
-
-public protocol ReactiveMavlinkType {
-    var mavlinkMessageId: UInt8 { get }
 }
