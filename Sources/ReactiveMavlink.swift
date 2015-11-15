@@ -24,6 +24,7 @@ public class ReactiveMavlink {
         message = mavlinkMessage.map { m in
             switch m.msgid {
             case 0: return HeartbeatCodec.decode(m)
+            case 30: return AttitudeCodec.decode(m)
             default: return UnidentifiedCodec.decode(m)
             }
         }

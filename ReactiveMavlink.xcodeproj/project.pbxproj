@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		27023DB61BF808C9002D21B1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27023DB51BF808C9002D21B1 /* Message.swift */; };
 		27023DB71BF8096B002D21B1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27023DB51BF808C9002D21B1 /* Message.swift */; };
+		27023DB91BF80BE4002D21B1 /* Attitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27023DB81BF80BE4002D21B1 /* Attitude.swift */; };
 		270EE77B1BF716A000DEA6DC /* Autopilot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EE77A1BF716A000DEA6DC /* Autopilot.swift */; };
 		270EE77D1BF716AA00DEA6DC /* Unidentified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EE77C1BF716AA00DEA6DC /* Unidentified.swift */; };
 		270EE78A1BF72F5400DEA6DC /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 270EE7881BF72F5400DEA6DC /* Debug.xcconfig */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		27023DB51BF808C9002D21B1 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Sources/Message.swift; sourceTree = SOURCE_ROOT; };
+		27023DB81BF80BE4002D21B1 /* Attitude.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attitude.swift; path = Sources/Attitude.swift; sourceTree = SOURCE_ROOT; };
 		270EE77A1BF716A000DEA6DC /* Autopilot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Autopilot.swift; path = Sources/Autopilot.swift; sourceTree = SOURCE_ROOT; };
 		270EE77C1BF716AA00DEA6DC /* Unidentified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Unidentified.swift; path = Sources/Unidentified.swift; sourceTree = SOURCE_ROOT; };
 		270EE7881BF72F5400DEA6DC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Vendor/xcconfigs/Base/Configurations/Debug.xcconfig; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		2786422A1BF614CB004F38AA /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				27023DB81BF80BE4002D21B1 /* Attitude.swift */,
 				278642271BF60659004F38AA /* Heartbeat.swift */,
 				270EE77C1BF716AA00DEA6DC /* Unidentified.swift */,
 			);
@@ -314,6 +317,7 @@
 				27023DB61BF808C9002D21B1 /* Message.swift in Sources */,
 				278642251BF4DA41004F38AA /* ReactiveMavlink.swift in Sources */,
 				270EE77B1BF716A000DEA6DC /* Autopilot.swift in Sources */,
+				27023DB91BF80BE4002D21B1 /* Attitude.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
