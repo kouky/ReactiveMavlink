@@ -8,20 +8,20 @@
 
 import Mavlink
 
-public struct Heartbeat: ReactiveMavlinkType {
+public struct Heartbeat: MessageType {
+    public let id: UInt8
     public let autopilot: Autopilot
-    public let mavlinkMessageId: UInt8
 }
 
 struct HeartbeatCodec : MessageCodec {
     
-    static func decode(message: mavlink_message_t) -> ReactiveMavlinkType {
+    static func decode(message: mavlink_message_t) -> MessageType {
         var msg = message
         var heartbeat = mavlink_heartbeat_t()
         mavlink_msg_heartbeat_decode(&msg, &heartbeat);
         return Heartbeat(
-            autopilot: Autopilot(rawValue: heartbeat.autopilot) ?? Autopilot.Unknown,
-            mavlinkMessageId: message.msgid
+            id: message.msgid,
+            autopilot: Autopilot(rawValue: heartbeat.autopilot) ?? Autopilot.Unknown
         )
     }
 }

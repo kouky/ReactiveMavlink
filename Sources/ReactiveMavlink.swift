@@ -11,27 +11,46 @@ import ReactiveCocoa
 
 public class ReactiveMavlink {
     
-    // MARK: Public signals
+    // MARK: Public properties
     public let heartbeat: Signal<Heartbeat, NSError>
-    public let message: Signal<ReactiveMavlinkType, NSError>
+    public let attitude: Signal<Attitude, NSError>
+    public let unidentified: Signal<Unidentified, NSError>
     
-    let mavlinkMessage: Signal<mavlink_message_t, NSError>
-    let mavlinkMessageObserver: Observer<mavlink_message_t, NSError>
+    
+    // MARK: Private properties
+    let adapter = ReactiveMavlinkAdapter()
+    let message: Signal<MessageType, NSError>
 
+    // MARK: Public methods
     public init() {
-        (mavlinkMessage, mavlinkMessageObserver) = Signal<mavlink_message_t, NSError>.pipe()
-
-        message = mavlinkMessage.map { m in
-            switch m.msgid {
-            case 0: return HeartbeatCodec.decode(m)
-            default: return UnidentifiedCodec.decode(m)
+        message = adapter.mavlink.map { msg in
+            switch msg.msgid {
+            case 0: return HeartbeatCodec.decode(msg)
+            case 30: return AttitudeCodec.decode(msg)
+            default: return UnidentifiedCodec.decode(msg)
             }
         }
         
-        heartbeat = message.filter { $0 is Heartbeat }.map { $0 as! Heartbeat }
+        heartbeat = extract(message)
+        attitude = extract(message)
+        unidentified = extract(message)
     }
     
     public func receiveData(data: NSData) {
+        adapter.processData(data)
+    }
+}
+
+class ReactiveMavlinkAdapter {
+    
+    let mavlink: Signal<mavlink_message_t, NSError>
+    private let mavlinkObserver: Observer<mavlink_message_t, NSError>
+
+    init() {
+        (mavlink, mavlinkObserver) = Signal<mavlink_message_t, NSError>.pipe()
+    }
+    
+    func processData(data: NSData) {
         var bytes = [UInt8](count: data.length, repeatedValue: 0)
         data.getBytes(&bytes, length: data.length)
         
@@ -40,16 +59,12 @@ public class ReactiveMavlink {
             var status = mavlink_status_t()
             let channel = UInt8(MAVLINK_COMM_1.rawValue)
             if mavlink_parse_char(channel, byte, &message, &status) != 0 {
-                mavlinkMessageObserver.sendNext(message)
+                mavlinkObserver.sendNext(message)
             }
         }
     }
 }
 
-protocol MessageCodec {
-    static func decode(var message: mavlink_message_t) -> ReactiveMavlinkType
-}
-
-public protocol ReactiveMavlinkType {
-    var mavlinkMessageId: UInt8 { get }
+func extract<T>(s: Signal<MessageType, NSError>) -> Signal<T, NSError> {
+    return s.filter { $0 is T }.map { $0 as! T }
 }
