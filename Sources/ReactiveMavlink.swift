@@ -43,14 +43,7 @@ class ReactiveMavlinkAdapter {
 
     init() {
         (mavlink, mavlinkObserver) = Signal<mavlink_message_t, NSError>.pipe()
-        
-        message = mavlink.map { msg in
-            switch msg.msgid {
-            case 0: return HeartbeatCodec.decode(msg)
-            case 30: return AttitudeCodec.decode(msg)
-            default: return UnidentifiedCodec.decode(msg)
-            }
-        }
+        message = mavlink.map { DecoderMap.decoderForMessageId($0.msgid)($0) }
     }
     
     func processData(data: NSData) {
@@ -72,7 +65,19 @@ class ReactiveMavlinkAdapter {
     }
 }
 
+struct DecoderMap {
+    
+    static func decoderForMessageId(id: UInt8) -> mavlink_message_t -> MessageType {
+        switch id {
+        case 0: return HeartbeatDecoder.decode
+        case 30: return AttitudeDecoder.decode
+        default: return UnidentifiedDecoder.decode
+        }
+    }
+}
+
 extension Signal {
+    
     func extract<T>() -> Signal<T, Error> {
         return self.filter { $0 is T }.map { $0 as! T }
     }

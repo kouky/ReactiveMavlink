@@ -13,6 +13,6 @@ public protocol MessageType {
     var id: UInt8 { get }
 }
 
-protocol MessageCodec {
+protocol MessageDecoder {
     static func decode(var message: mavlink_message_t) -> MessageType
 }

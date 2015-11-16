@@ -12,7 +12,7 @@ public struct Unidentified: MessageType {
     public let id: UInt8
 }
 
-struct UnidentifiedCodec : MessageCodec {
+struct UnidentifiedDecoder : MessageDecoder {
     
     static func decode(message: mavlink_message_t) -> MessageType {
         return Unidentified(id: message.msgid)
