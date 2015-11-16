@@ -31,9 +31,9 @@ public class ReactiveMavlink {
             }
         }
         
-        heartbeat = extract(message)
-        attitude = extract(message)
-        unidentified = extract(message)
+        heartbeat = message.extract()
+        attitude = message.extract()
+        unidentified = message.extract()
     }
     
     public func receiveData(data: NSData) {
@@ -65,6 +65,8 @@ class ReactiveMavlinkAdapter {
     }
 }
 
-func extract<T>(s: Signal<MessageType, NSError>) -> Signal<T, NSError> {
-    return s.filter { $0 is T }.map { $0 as! T }
+extension Signal {
+    func extract<T>() -> Signal<T, Error> {
+        return self.filter { $0 is T }.map { $0 as! T }
+    }
 }
