@@ -39,6 +39,10 @@ public class ReactiveMavlink {
     public func receiveData(data: NSData) {
         adapter.processData(data)
     }
+    
+    deinit {
+        adapter.dispose()
+    }
 }
 
 class ReactiveMavlinkAdapter {
@@ -62,6 +66,10 @@ class ReactiveMavlinkAdapter {
                 mavlinkObserver.sendNext(message)
             }
         }
+    }
+    
+    func dispose() {
+        mavlinkObserver.sendCompleted()
     }
 }
 
