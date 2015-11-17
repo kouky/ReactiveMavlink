@@ -74,17 +74,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		27165DD91BF36378009149CD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				27165DD71BF35FE7009149CD /* Result.framework */,
-				27165DD51BF35FD9009149CD /* Result.framework */,
-				27165DD21BF35F0C009149CD /* ReactiveCocoa.framework */,
-				27165DD01BF35EAE009149CD /* ReactiveCocoa.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		278446D21BF217C70045AF6A /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +118,6 @@
 				27EF10D71BF1FD0F004256EF /* Resources */,
 				278446D21BF217C70045AF6A /* Config */,
 				27EA30CB1BF1DF2B006E21B9 /* Products */,
-				27165DD91BF36378009149CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +147,10 @@
 			children = (
 				278446CE1BF214610045AF6A /* ReactiveMavlink.h */,
 				27EF10DA1BF1FD2D004256EF /* Info.plist */,
+				27165DD71BF35FE7009149CD /* Result.framework */,
+				27165DD51BF35FD9009149CD /* Result.framework */,
+				27165DD21BF35F0C009149CD /* ReactiveCocoa.framework */,
+				27165DD01BF35EAE009149CD /* ReactiveCocoa.framework */,
 			);
 			name = Resources;
 			sourceTree = "<group>";

@@ -16,38 +16,34 @@ public class ReactiveMavlink {
     public let attitude: Signal<Attitude, NSError>
     public let unidentified: Signal<Unidentified, NSError>
     
-    
     // MARK: Private properties
     let adapter = ReactiveMavlinkAdapter()
-    let message: Signal<MessageType, NSError>
 
     // MARK: Public methods
     public init() {
-        message = adapter.mavlink.map { msg in
-            switch msg.msgid {
-            case 0: return HeartbeatCodec.decode(msg)
-            case 30: return AttitudeCodec.decode(msg)
-            default: return UnidentifiedCodec.decode(msg)
-            }
-        }
-        
-        heartbeat = extract(message)
-        attitude = extract(message)
-        unidentified = extract(message)
+        heartbeat = adapter.message.extract()
+        attitude = adapter.message.extract()
+        unidentified = adapter.message.extract()
     }
     
     public func receiveData(data: NSData) {
         adapter.processData(data)
     }
+    
+    deinit {
+        adapter.dispose()
+    }
 }
 
 class ReactiveMavlinkAdapter {
     
-    let mavlink: Signal<mavlink_message_t, NSError>
+    let message: Signal<MessageType, NSError>
+    private let mavlink: Signal<mavlink_message_t, NSError>
     private let mavlinkObserver: Observer<mavlink_message_t, NSError>
 
     init() {
         (mavlink, mavlinkObserver) = Signal<mavlink_message_t, NSError>.pipe()
+        message = mavlink.map { DecoderMap.decoderForMessageId($0.msgid)($0) }
     }
     
     func processData(data: NSData) {
@@ -63,8 +59,26 @@ class ReactiveMavlinkAdapter {
             }
         }
     }
+    
+    func dispose() {
+        mavlinkObserver.sendCompleted()
+    }
 }
 
-func extract<T>(s: Signal<MessageType, NSError>) -> Signal<T, NSError> {
-    return s.filter { $0 is T }.map { $0 as! T }
+struct DecoderMap {
+    
+    static func decoderForMessageId(id: UInt8) -> mavlink_message_t -> MessageType {
+        switch id {
+        case 0: return HeartbeatDecoder.decode
+        case 30: return AttitudeDecoder.decode
+        default: return UnidentifiedDecoder.decode
+        }
+    }
+}
+
+extension Signal {
+    
+    func extract<T>() -> Signal<T, Error> {
+        return self.filter { $0 is T }.map { $0 as! T }
+    }
 }

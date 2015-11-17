@@ -13,7 +13,7 @@ public struct Heartbeat: MessageType {
     public let autopilot: Autopilot
 }
 
-struct HeartbeatCodec : MessageCodec {
+struct HeartbeatDecoder : MessageDecoder {
     
     static func decode(message: mavlink_message_t) -> MessageType {
         var msg = message

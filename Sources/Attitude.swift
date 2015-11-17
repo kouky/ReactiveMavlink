@@ -18,7 +18,7 @@ public struct Attitude: MessageType {
     public let yawSpeed: Float
 }
 
-struct AttitudeCodec : MessageCodec {
+struct AttitudeDecoder : MessageDecoder {
     
     static func decode(message: mavlink_message_t) -> MessageType {
         var msg = message
