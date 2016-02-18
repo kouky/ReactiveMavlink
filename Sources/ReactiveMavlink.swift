@@ -14,6 +14,7 @@ public class ReactiveMavlink {
     // MARK: Public properties
     public let heartbeat: Signal<Heartbeat, NSError>
     public let attitude: Signal<Attitude, NSError>
+    public let headUpDisplay: Signal<HeadUpDisplay, NSError>
     public let unidentified: Signal<Unidentified, NSError>
     
     // MARK: Private properties
@@ -23,6 +24,7 @@ public class ReactiveMavlink {
     public init() {
         heartbeat = adapter.message.extract()
         attitude = adapter.message.extract()
+        headUpDisplay = adapter.message.extract()
         unidentified = adapter.message.extract()
     }
     
@@ -71,6 +73,7 @@ struct DecoderMap {
         switch id {
         case 0: return HeartbeatDecoder.decode
         case 30: return AttitudeDecoder.decode
+        case 74: return HeadUpDisplayDecoder.decode
         default: return UnidentifiedDecoder.decode
         }
     }
