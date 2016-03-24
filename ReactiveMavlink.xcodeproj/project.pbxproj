@@ -12,10 +12,6 @@
 		27023DB91BF80BE4002D21B1 /* Attitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27023DB81BF80BE4002D21B1 /* Attitude.swift */; };
 		270EE77B1BF716A000DEA6DC /* Autopilot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EE77A1BF716A000DEA6DC /* Autopilot.swift */; };
 		270EE77D1BF716AA00DEA6DC /* Unidentified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EE77C1BF716AA00DEA6DC /* Unidentified.swift */; };
-		270EE78A1BF72F5400DEA6DC /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 270EE7881BF72F5400DEA6DC /* Debug.xcconfig */; };
-		270EE78B1BF72F5400DEA6DC /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 270EE7891BF72F5400DEA6DC /* Release.xcconfig */; };
-		270EE78D1BF72F6D00DEA6DC /* iOS-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 270EE78C1BF72F6D00DEA6DC /* iOS-Framework.xcconfig */; };
-		270EE7911BF72F8C00DEA6DC /* Mac-Framework.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 270EE7901BF72F8C00DEA6DC /* Mac-Framework.xcconfig */; };
 		270EE7921BF7304700DEA6DC /* Unidentified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EE77C1BF716AA00DEA6DC /* Unidentified.swift */; };
 		270EE7931BF7307500DEA6DC /* Autopilot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270EE77A1BF716A000DEA6DC /* Autopilot.swift */; };
 		27165DD11BF35EAE009149CD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27165DD01BF35EAE009149CD /* ReactiveCocoa.framework */; };
@@ -224,7 +220,7 @@
 		27EA30C11BF1DF2B006E21B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Michael Koukoullis";
 				TargetAttributes = {
 					2797DE0A1BF210150081F5D2 = {
@@ -265,10 +261,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				270EE78D1BF72F6D00DEA6DC /* iOS-Framework.xcconfig in Resources */,
-				270EE7911BF72F8C00DEA6DC /* Mac-Framework.xcconfig in Resources */,
-				270EE78B1BF72F5400DEA6DC /* Release.xcconfig in Resources */,
-				270EE78A1BF72F5400DEA6DC /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
