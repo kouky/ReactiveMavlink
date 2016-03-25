@@ -14,5 +14,5 @@ public protocol MessageType {
 }
 
 protocol MessageDecoder {
-    static func decode(var message: mavlink_message_t) -> MessageType
+    static func decode(message: mavlink_message_t) -> MessageType
 }
